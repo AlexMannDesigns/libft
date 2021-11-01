@@ -6,13 +6,13 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:56:09 by amann             #+#    #+#             */
-/*   Updated: 2021/11/01 15:23:09 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/01 16:01:56 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	size_t	i;
 
