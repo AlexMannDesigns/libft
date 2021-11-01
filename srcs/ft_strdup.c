@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 12:41:30 by amann             #+#    #+#             */
-/*   Updated: 2021/11/01 15:37:42 by amann            ###   ########.fr       */
+/*   Created: 2021/10/29 11:38:14 by amann             #+#    #+#             */
+/*   Updated: 2021/11/01 15:29:43 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
+char	*ft_strdup(char *src)
+{
+	int		len;
+	int		i;
+	char	*res;
 
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
-size_t	ft_strlen(char *str);
-void	ft_putnbr(int n);
-int		ft_strcmp(char *s1, char *s2);
-char	*ft_strdup(char *src);
-
-#endif
-
+	len = 0;
+	i = 0;
+	while (src[len] != '\0')
+		len++;
+	res = (char *)malloc((len + 1) * sizeof(char));
+	while (i <= len)
+	{
+		res[i] = src[i];
+		i++;
+	}
+	return (*&res);
+}
