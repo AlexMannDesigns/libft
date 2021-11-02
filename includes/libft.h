@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:41:30 by amann             #+#    #+#             */
-/*   Updated: 2021/11/01 19:31:16 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/02 15:16:37 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ size_t	ft_strlen(char *str);
 void	ft_putnbr(int n);
 int		ft_strcmp(char *s1, char *s2);
 char	*ft_strdup(char *src);
+
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
 
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
