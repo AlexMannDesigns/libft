@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 16:05:54 by amann             #+#    #+#             */
-/*   Updated: 2021/11/03 14:27:54 by amann            ###   ########.fr       */
+/*   Created: 2021/11/03 14:15:42 by amann             #+#    #+#             */
+/*   Updated: 2021/11/03 15:42:47 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void(*f)(char *))
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	i;
+	char	*temp;
+	char	*d;
+	size_t	i;
 
+	temp = malloc(n);
+	if (!temp)
+		return NULL;
+	d = (char *) dest;
 	i = 0;
-	while (s[i])
+	while (i < n)
 	{
-		f(&s[i]);
+		temp[i] = *(char *)(src + i);
 		i++;
+	}
+	while (n > 0)
+	{
+		*d++ = *temp++;
+		n--;
 	}	
+	return (dest);
 }
