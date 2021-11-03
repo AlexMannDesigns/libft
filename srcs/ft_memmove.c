@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 14:15:42 by amann             #+#    #+#             */
-/*   Updated: 2021/11/03 15:42:47 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/03 16:25:33 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	temp = malloc(n);
 	if (!temp)
-		return NULL;
+		return (NULL);
 	d = (char *) dest;
 	i = 0;
 	while (i < n)
