@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amann <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 16:05:24 by amann             #+#    #+#             */
-/*   Updated: 2021/11/03 18:58:40 by amann            ###   ########.fr       */
+/*   Created: 2021/11/03 19:30:54 by amann             #+#    #+#             */
+/*   Updated: 2021/11/03 19:32:07 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
+	size_t	len;
 	size_t	i;
-
+	
+	len = ft_strlen(dest);
 	i = 0;
-	while (i < n)
+	while (src[i] != '\0' && i < n)
 	{
-		if (*(char *)(s1 + i) == *(char *)(s2 + i))
-			i++;
-		else
-			return (*(char *)(s1 + i) - *(char *)(s2 + i));
+		dest[len + i] = src[i];
+		i++;
 	}
-	return (0);
+	dest[len + i] = '\0';
+	return (dest);
 }
