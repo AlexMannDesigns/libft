@@ -6,15 +6,13 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:41:30 by amann             #+#    #+#             */
-/*   Updated: 2021/11/05 13:11:46 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/05 15:42:05 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <ctype.h>
-# include <stdio.h>
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -50,6 +48,10 @@ int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
 int		ft_islower(int c);
 int		ft_isupper(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
