@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:41:30 by amann             #+#    #+#             */
-/*   Updated: 2021/11/05 15:42:05 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/05 17:02:09 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
