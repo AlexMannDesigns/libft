@@ -6,13 +6,14 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:41:30 by amann             #+#    #+#             */
-/*   Updated: 2021/11/04 18:56:25 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/05 13:11:46 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <ctype.h>
 # include <stdio.h>
 # include <string.h>
 # include <unistd.h>
@@ -45,6 +46,10 @@ char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 
 int		ft_atoi(const char *str);
+
+int		ft_isalpha(int c);
+int		ft_islower(int c);
+int		ft_isupper(int c);
 
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
