@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 17:24:22 by amann             #+#    #+#             */
-/*   Updated: 2021/11/08 18:10:51 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/10 13:38:17 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s)
 	i = 0;
 	while (i < len)
 	{
-		res[i] = s[start + i]; 
+		res[i] = s[start + i];
 		i++;
 	}
 	res[i] = '\0';
