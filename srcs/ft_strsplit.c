@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 13:38:59 by amann             #+#    #+#             */
-/*   Updated: 2021/11/10 15:29:20 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/10 15:34:09 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*res_malloc(char const *s, int pos, char c)
 {
-	int 	len;
+	int		len;
 	char	*str;
 	int		i;
 
@@ -70,7 +70,7 @@ char	**ft_strsplit(char const *s, char c)
 		if (s[pos] != c)
 		{
 			res[i] = res_malloc(s, pos, c);
-			pos = pos + (ft_strlen(res[i]) - 1);	
+			pos = pos + (ft_strlen(res[i]) - 1);
 			i++;
 		}
 		pos++;
