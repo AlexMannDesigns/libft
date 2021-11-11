@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:24:03 by amann             #+#    #+#             */
-/*   Updated: 2021/11/10 18:33:51 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/10 18:40:12 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	*ft_itoa(int n)
 		n = n * -1;
 	}
 	*itoa_recursion(s, n) = '\0';
-	len = strlen(s);
+	len = ft_strlen(s);
 	if (sign == 1)
 		res = positive_res_malloc(s, len);
 	else

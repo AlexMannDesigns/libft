@@ -6,7 +6,7 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 13:22:45 by amann             #+#    #+#              #
-#    Updated: 2021/11/08 16:25:12 by amann            ###   ########.fr        #
+#    Updated: 2021/11/11 15:41:06 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME) $(TESTNAME) a.out $(SRCDIR)a.out
+	rm -f $(NAME) $(TESTNAME) a.out $(SRCDIR)a.out test.txt
 
 re: fclean all
 
