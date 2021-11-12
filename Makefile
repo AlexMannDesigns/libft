@@ -6,16 +6,16 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 13:22:45 by amann             #+#    #+#              #
-#    Updated: 2021/11/11 15:41:06 by amann            ###   ########.fr        #
+#    Updated: 2021/11/12 11:20:20 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #variables
 NAME = libft.a
-SRCDIR = srcs/
+SRCDIR = libft/
 HEADER = includes/
 FLAGS = -Wall -Wextra -Werror -c -I 
-LIB = $(SRCDIR)*.c
+LIB = *.c
 OBJ = *.o
 MAIN = test.c
 TESTNAME = test
