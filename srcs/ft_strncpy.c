@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:10:51 by amann             #+#    #+#             */
-/*   Updated: 2021/11/03 17:11:56 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/12 18:36:59 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	ft_bzero((void *)(dest + i), (n - i));
 	return (dest);
 }
