@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:18:56 by amann             #+#    #+#             */
-/*   Updated: 2021/11/12 16:24:06 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/12 17:09:35 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
+	size_t	len;
 
+	len = ft_strlen(s);
+	if (c == '\0')
+		return ((char *)(s + len));
 	i = 0;
-	while (s)
+	while (i < len)
 	{
-		if (((unsigned char *)s)[i] == (unsigned char)c)
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
 			return ((char *)(s + i));
-		s++;
+		i++;
 	}
 	return (NULL);
 }

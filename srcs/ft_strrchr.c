@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:40:27 by amann             #+#    #+#             */
-/*   Updated: 2021/11/04 16:16:42 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/12 16:59:50 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (*(s + i) == c)
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
 			return ((char *)(s + i));
 		i--;
 	}
