@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:48:07 by amann             #+#    #+#             */
-/*   Updated: 2021/11/08 15:53:41 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/15 12:43:52 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,9 @@ static int	solve_atoi(const char *str, int i, int res, int sign)
 {
 	while (str[i] != '\0')
 	{
-		if (!ft_isdigit(str[i]))
+		if (!ft_isdigit(str[i]) && !white_space(str, i) && !(str[i] == '+' && ft_isdigit(str[i + 1])))
 		{
-			if (white_space(str, i))
-				i++;
-			else if (str[i] == '+' && ft_isdigit(str[i + 1]))
-				i++;
-			else if (str[i] == '-' && ft_isdigit(str[i + 1]))
+			if (str[i] == '-' && ft_isdigit(str[i + 1]))
 				sign = -1;
 			else
 				return (0);
