@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:08:00 by amann             #+#    #+#             */
-/*   Updated: 2021/11/08 13:04:56 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/15 16:58:42 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*res;
 	size_t	i;
 	size_t	len;
-
+	
+	if (!s)
+		return (NULL);
 	len = ft_strlen(s);
 	res = (char *) malloc((len + 1) * sizeof(char));
 	if (!res)

@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:33:55 by amann             #+#    #+#             */
-/*   Updated: 2021/11/08 13:04:57 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/15 17:02:32 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size_t	len;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	len = ft_strlen(s);
 	res = (char *) malloc((len + 1) * sizeof(char));
 	if (!res)

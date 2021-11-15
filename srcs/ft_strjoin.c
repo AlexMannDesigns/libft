@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:40:59 by amann             #+#    #+#             */
-/*   Updated: 2021/11/08 17:04:36 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/15 16:58:12 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	char	*res;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = (ft_strlen(s1)) + (ft_strlen(s2));
 	res = (char *) malloc((len + 1) * sizeof(char));
 	if (!res)

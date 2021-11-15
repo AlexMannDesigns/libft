@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:37:40 by amann             #+#    #+#             */
-/*   Updated: 2021/11/15 13:24:30 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/15 17:06:59 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*res;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	res = (char *) malloc((len + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
