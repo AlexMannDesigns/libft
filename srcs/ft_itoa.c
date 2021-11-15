@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:24:03 by amann             #+#    #+#             */
-/*   Updated: 2021/11/11 17:57:32 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/15 17:48:08 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	*positive_res_malloc(char *s, int len)
 	return (res);
 }
 
-static char	*negative_res_malloc(char *s, int len)
+static char	*negative_res_malloc(char *s, int len, int min)
 {
 	char	*res;
 	int		i;
@@ -41,7 +41,10 @@ static char	*negative_res_malloc(char *s, int len)
 	i = 1;
 	while (s[i - 1] != '\0')
 	{
-		res[i] = s[i - 1];
+		if (i == 10 && min == 1)
+			res[i] = '8';
+		else
+			res[i] = s[i - 1];
 		i++;
 	}	
 	return (res);
@@ -61,18 +64,25 @@ char	*ft_itoa(int n)
 	char	*res;
 	size_t	len;
 	int		sign;
+	int		min;
 
 	sign = 1;
 	if (n < 0)
 	{
 		sign = -1;
-		n = n * -1;
+		if (n == -2147483648)
+		{
+			min = 1;
+			n = 2147483647;
+		}
+		else	
+			n = n * -1;
 	}
 	*itoa_recursion(s, n) = '\0';
 	len = ft_strlen(s);
 	if (sign == 1)
 		res = positive_res_malloc(s, len);
 	else
-		res = negative_res_malloc(s, len);
+		res = negative_res_malloc(s, len, min);
 	return (res);
 }

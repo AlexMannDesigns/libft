@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 17:24:22 by amann             #+#    #+#             */
-/*   Updated: 2021/11/15 16:55:57 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/15 17:16:22 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static char	*strtrim_helper(char const *s, char *res, size_t len, size_t st)
 	}
 	res[i] = '\0';
 	return (res);
-
 }
 
 char	*ft_strtrim(char const *s)
