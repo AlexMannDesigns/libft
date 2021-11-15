@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 17:24:22 by amann             #+#    #+#             */
-/*   Updated: 2021/11/10 13:38:17 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/15 16:26:32 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,28 @@
 
 char	*ft_strtrim(char const *s)
 {
-	size_t	start;
+	size_t	st;
 	size_t	end;
-	size_t	len;
 	size_t	i;
 	char	*res;
 
-	start = 0;
-	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
-		start++;
+	st = 0;
+	while ((s[st] == ' ' || s[st] == '\n' || s[st] == '\t') && s[st] != '\0')
+		st++;
 	end = ft_strlen(s) - 1;
 	while (s[end] == ' ' || s[end] == '\n' || s[end] == '\t')
+	{
+		if (end == 0)
+			return ("");
 		end--;
-	len = end - start + 1;
-	res = (char *) malloc((len + 1) * sizeof(char));
+	}
+	res = (char *) malloc((end - st + 2) * sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i++ < (end - st + 1))
 	{
-		res[i] = s[start + i];
-		i++;
+		res[i] = s[st + i];
 	}
 	res[i] = '\0';
 	return (res);

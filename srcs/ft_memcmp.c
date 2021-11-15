@@ -6,14 +6,11 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:05:24 by amann             #+#    #+#             */
-/*   Updated: 2021/11/12 16:02:15 by amann            ###   ########.fr       */
+/*   Updated: 2021/11/15 13:36:51 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
