@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 17:28:37 by amann             #+#    #+#             */
-/*   Updated: 2021/11/16 10:49:16 by amann            ###   ########.fr       */
+/*   Created: 2021/11/16 15:03:56 by amann             #+#    #+#             */
+/*   Updated: 2021/11/16 15:08:18 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
+void	delete_func(void *content, size_t content_size)
 {
-	size_t	i;
-	size_t	n_len;
+	free(content);
+	free(content_size);
+}
 
-	i = 0;
-	n_len = ft_strlen(needle);
-	if (n_len == 0)
-		return ((char *)haystack);
-	while (*(haystack + i) != '\0' && (i + n_len) <= n)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+{
+	t_list *tmp;
+
+	del(*alst.content, *alst.content_size);
+	while (*alst->next != NULL)
 	{
-		if (ft_strncmp((haystack + i), needle, n_len) == 0)
-			return ((char *)(haystack + i));
-		i++;
+		if (*alst->next->content)
+		{
+			tmp = *alst->next;
+			*alst->next = *alst->next->next;
+			free(tmp);
+		}
+		else
+			*alst = *alst->next;
 	}
-	return (NULL);
 }
