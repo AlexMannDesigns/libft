@@ -6,14 +6,13 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 13:22:45 by amann             #+#    #+#              #
-#    Updated: 2021/11/19 16:38:22 by amann            ###   ########.fr        #
+#    Updated: 2021/11/22 16:12:03 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #variables
 NAME = libft.a
 SRCDIR = libft/
-HEADER = includes/
 FLAGS = -Wall -Wextra -Werror -c -I 
 LIB = *.c
 OBJ = *.o
@@ -26,43 +25,42 @@ TESTFLAGS = -L. -lft -o $(TESTNAME) -I
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) $(HEADER) $(LIB)
+	gcc $(FLAGS) $(LIB)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 	
 test: $(NAME)
-	gcc tests/$(TEST) $(TESTFLAGS) $(HEADER)
+	gcc tests/$(TEST) $(TESTFLAGS) 
 
 testbonus: fclean $(NAME)
-	gcc $(TESTDIR)bonus_main.c $(TESTFLAGS) $(HEADER)
+	gcc $(TESTDIR)bonus_main.c $(TESTFLAGS) 
 
 testmisc: fclean $(NAME)
-	gcc $(TESTDIR)misc_main.c $(TESTFLAGS) $(HEADER)
+	gcc $(TESTDIR)misc_main.c $(TESTFLAGS) 
 
 testjts: fclean $(NAME)
-	gcc $(TESTDIR)jts_main.c $(TESTFLAGS) $(HEADER)
+	gcc $(TESTDIR)jts_main.c $(TESTFLAGS) 
 
 testequ: fclean $(NAME)
-	gcc $(TESTDIR)equsub_main.c $(TESTFLAGS) $(HEADER)
+	gcc $(TESTDIR)equsub_main.c $(TESTFLAGS) 
 
 testiter: fclean $(NAME)
-	gcc $(TESTDIR)iter_main.c $(TESTFLAGS) $(HEADER)
+	gcc $(TESTDIR)iter_main.c $(TESTFLAGS) 
 
 testmem2: fclean $(NAME)
-	gcc $(TESTDIR)mem2_main.c $(TESTFLAGS) $(HEADER)
+	gcc $(TESTDIR)mem2_main.c $(TESTFLAGS) 
 
 testis: fclean $(NAME)
-	gcc $(TESTDIR)is_main.c $(TESTFLAGS) $(HEADER)
+	gcc $(TESTDIR)is_main.c $(TESTFLAGS) 
 
 testatoi: fclean $(NAME)
-	gcc $(TESTDIR)atoi_main.c $(TESTFLAGS) $(HEADER)
+	gcc $(TESTDIR)atoi_main.c $(TESTFLAGS) 
 
 teststr: fclean $(NAME)
-	gcc $(TESTDIR)str_main.c $(TESTFLAGS) $(HEADER)
+	gcc $(TESTDIR)str_main.c $(TESTFLAGS) 
 
 testmem: fclean $(NAME)
-	gcc $(TESTDIR)mem_main.c $(TESTFLAGS) $(HEADER)
-
+	gcc $(TESTDIR)mem_main.c $(TESTFLAGS) 
 clean:
 	rm -f $(OBJ)
 
