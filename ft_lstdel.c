@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 16:33:17 by amann             #+#    #+#             */
-/*   Updated: 2021/11/22 13:42:04 by amann            ###   ########.fr       */
+/*   Created: 2021/11/19 16:56:47 by amann             #+#    #+#             */
+/*   Updated: 2021/11/22 15:03:27 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	del((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	(*alst) = NULL;
+	if ((*alst) != NULL)
+	{
+		del((*alst)->content, (*alst)->content_size);
+		ft_lstdel(&(*alst)->next, del);	
+		free(*alst);
+		(*alst) = NULL;
+	}
 }

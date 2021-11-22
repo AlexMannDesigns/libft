@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 16:33:17 by amann             #+#    #+#             */
-/*   Updated: 2021/11/22 13:42:04 by amann            ###   ########.fr       */
+/*   Created: 2021/11/04 10:49:54 by amann             #+#    #+#             */
+/*   Updated: 2021/11/15 12:22:25 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	del((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	(*alst) = NULL;
+	size_t	len_dst;
+	size_t	len_src;
+	size_t	i;
+
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	if (len_dst > dstsize)
+		return (len_src + dstsize);
+	i = 0;
+	while (src[i] != '\0' && (dstsize - len_dst - 1 - i) > 0)
+	{
+		dst[len_dst + i] = src[i];
+		i++;
+	}
+	dst[len_dst + i] = '\0';
+	return (len_dst + len_src);
 }
