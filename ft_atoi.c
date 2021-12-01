@@ -6,26 +6,17 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:48:07 by amann             #+#    #+#             */
-/*   Updated: 2021/11/16 10:45:32 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/01 17:34:06 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	white_space(const char *str, int i)
-{
-	if (str[i] == ' ' || str[i] == '\t' || str[i] == '\r')
-		return (1);
-	if (str[i] == '\v' || str[i] == '\f' || str[i] == '\n')
-		return (1);
-	return (0);
-}
-
 static int	solve_atoi(const char *str, int i, int res, int sign)
 {
 	while (str[i] != '\0')
 	{
-		if (!ft_isdigit(str[i]) && !white_space(str, i))
+		if (!ft_isdigit(str[i]) && !ft_iswhitespace(str[i]))
 		{
 			if (!(str[i] == '+' && ft_isdigit(str[i + 1])))
 			{

@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_freearray.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 16:27:54 by amann             #+#    #+#             */
-/*   Updated: 2021/11/19 16:29:35 by amann            ###   ########.fr       */
+/*   Created: 2021/12/01 16:43:03 by amann             #+#    #+#             */
+/*   Updated: 2021/12/01 17:16:03 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_freearray(void **arr, size_t size)
 {
-	new->next = *alst;
-	*alst = new;
+	size_t i;
+
+	i = 0;
+	while (i <= size)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }

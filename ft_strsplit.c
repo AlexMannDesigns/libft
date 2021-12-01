@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 13:38:59 by amann             #+#    #+#             */
-/*   Updated: 2021/11/19 14:47:59 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/01 17:19:20 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,11 @@ static char	**final_res_malloc(char **res)
 	i = 0;
 	while (res[i] != NULL)
 	{
-		final_res[i] = res[i];
+		final_res[i] = ft_strdup(res[i]);
 		i++;
 	}
 	final_res[i] = NULL;
+	ft_freearray((void **)res, i);
 	return (final_res);
 }
 
@@ -79,6 +80,5 @@ char	**ft_strsplit(char const *s, char c)
 	}
 	res[i] = NULL;
 	final_res = final_res_malloc(res);
-	free(res);
 	return (final_res);
 }
