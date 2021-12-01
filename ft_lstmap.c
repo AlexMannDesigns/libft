@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 16:39:46 by amann             #+#    #+#             */
-/*   Updated: 2021/12/01 12:25:29 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/01 13:34:47 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!lst || !f)
 		return (NULL);
