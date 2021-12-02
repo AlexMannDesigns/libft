@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 13:38:59 by amann             #+#    #+#             */
-/*   Updated: 2021/12/01 17:19:20 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/02 09:05:12 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*res_malloc(char const *s, int pos, char c)
 	int		i;
 
 	len = 0;
-	while (s[pos + len] != c)
+	while (s[pos + len] != c && s[pos + len] != '\0')
 		len++;
 	str = (char *) malloc((len + 1) * sizeof(char));
 	if (!str)
@@ -52,7 +52,6 @@ static char	**final_res_malloc(char **res)
 		i++;
 	}
 	final_res[i] = NULL;
-	ft_freearray((void **)res, i);
 	return (final_res);
 }
 
@@ -67,7 +66,7 @@ char	**ft_strsplit(char const *s, char c)
 		return (NULL);
 	pos = 0;
 	i = 0;
-	res = (char **) malloc((ft_strlen(s) + 1) * sizeof(char *));
+	res = (char **) ft_memalloc((ft_strlen(s) + 1) * sizeof(char *));
 	while (s[pos] != '\0')
 	{
 		if (s[pos] != c)
@@ -80,5 +79,9 @@ char	**ft_strsplit(char const *s, char c)
 	}
 	res[i] = NULL;
 	final_res = final_res_malloc(res);
+	res = (char **)ft_freearray((void **)res, (ft_strlen(s)));
+	free(res);
 	return (final_res);
 }
+
+//test ' ' with g

@@ -6,13 +6,13 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:43:03 by amann             #+#    #+#             */
-/*   Updated: 2021/12/01 17:16:03 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/02 08:32:21 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_freearray(void **arr, size_t size)
+void	**ft_freearray(void **arr, size_t size)
 {
 	size_t i;
 
@@ -23,4 +23,5 @@ void	ft_freearray(void **arr, size_t size)
 		i++;
 	}
 	free(arr);
+	return (NULL);
 }

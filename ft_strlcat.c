@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:49:54 by amann             #+#    #+#             */
-/*   Updated: 2021/11/15 12:22:25 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/02 09:23:24 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (len_dst > dstsize)
 		return (len_src + dstsize);
 	i = 0;
-	while (src[i] != '\0' && (dstsize - len_dst - 1 - i) > 0)
+	while (src[i] != '\0' && dstsize - len_dst - 1 - i) > 0)
 	{
 		dst[len_dst + i] = src[i];
 		i++;
