@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:41:30 by amann             #+#    #+#             */
-/*   Updated: 2021/12/02 08:28:29 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/02 13:55:52 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-void	**ft_freearray(void **arr, size_t size);
+void	ft_freearray(void ***arr, size_t size);
 int		ft_iswhitespace(char c);
 int		ft_abs(int i);
 #endif
