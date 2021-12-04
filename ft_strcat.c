@@ -6,24 +6,24 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 19:02:05 by amann             #+#    #+#             */
-/*   Updated: 2021/11/04 16:16:54 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/03 16:30:08 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	size_t	len;
 	size_t	i;
 
-	len = ft_strlen(dest);
+	len = ft_strlen(s1);
 	i = 0;
-	while (src[i] != '\0')
+	while (s2[i] != '\0')
 	{
-		dest[len + i] = src[i];
+		s1[len + i] = s2[i];
 		i++;
 	}
-	dest[len + i] = '\0';
-	return (dest);
+	s1[len + i] = '\0';
+	return (s1);
 }

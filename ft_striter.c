@@ -6,13 +6,13 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:05:54 by amann             #+#    #+#             */
-/*   Updated: 2021/11/15 17:04:54 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/03 16:49:38 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void(*f)(char *))
+void	ft_striter(char *s, void (*f)(char *))
 {
 	int	i;
 
