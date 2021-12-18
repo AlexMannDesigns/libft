@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:41:30 by amann             #+#    #+#             */
-/*   Updated: 2021/12/07 18:09:00 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/18 12:41:26 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,5 @@ int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_iswhitespace(char c);
 int		ft_abs(int i);
+char	*ft_strndup(const char *s, size_t n);
 #endif
