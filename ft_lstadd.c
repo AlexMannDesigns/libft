@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 16:27:54 by amann             #+#    #+#             */
-/*   Updated: 2021/12/07 18:07:53 by amann            ###   ########.fr       */
+/*   Updated: 2021/12/31 12:33:06 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstadd(t_list **alst, t_list *new)
 	if (!(*alst))
 	{
 		*alst = new;
-		return;
+		return ;
 	}
 	new->next = *alst;
 	*alst = new;
