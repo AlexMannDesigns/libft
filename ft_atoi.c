@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:48:07 by amann             #+#    #+#             */
-/*   Updated: 2022/01/05 11:21:19 by amann            ###   ########.fr       */
+/*   Updated: 2022/01/05 11:34:18 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_atoi(const char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!ft_isdigit(str[i]) && !ft_iswhitespace(str[i]) && !(str[i] == '+' \
-			&& ft_isdigit(str[i + 1])))
+		if (!ft_isdigit(str[i]) && !ft_iswhitespace(str[i]) && \
+			!(str[i] == '+' && ft_isdigit(str[i + 1])))
 		{
 			if (str[i] == '-' && ft_isdigit(str[i + 1]))
 				sign = -1;
