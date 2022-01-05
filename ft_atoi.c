@@ -6,38 +6,36 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:48:07 by amann             #+#    #+#             */
-/*   Updated: 2021/12/01 17:34:06 by amann            ###   ########.fr       */
+/*   Updated: 2022/01/05 11:21:19 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	solve_atoi(const char *str, int i, int res, int sign)
+int	ft_atoi(const char *str)
 {
+	int	res;
+	int	sign;
+	int	i;
+
+	res = 0;
+	sign = 1;
+	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!ft_isdigit(str[i]) && !ft_iswhitespace(str[i]))
+		if (!ft_isdigit(str[i]) && !ft_iswhitespace(str[i]) && !(str[i] == '+' \
+			&& ft_isdigit(str[i + 1])))
 		{
-			if (!(str[i] == '+' && ft_isdigit(str[i + 1])))
-			{
-				if (str[i] == '-' && ft_isdigit(str[i + 1]))
-					sign = -1;
-				else
-					return (0);
-			}
+			if (str[i] == '-' && ft_isdigit(str[i + 1]))
+				sign = -1;
+			else
+				return (0);
 		}
 		if (ft_isdigit(str[i]))
-		{
 			res = (res * 10) + (str[i] - 48);
-			if (!ft_isdigit(str[i + 1]))
-				return (res * sign);
-		}
+		if (ft_isdigit(str[i]) && !ft_isdigit(str[i + 1]))
+			return (res * sign);
 		i++;
 	}
 	return (res * sign);
-}
-
-int	ft_atoi(const char *str)
-{
-	return (solve_atoi(str, 0, 0, 1));
 }
