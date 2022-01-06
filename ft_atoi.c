@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:48:07 by amann             #+#    #+#             */
-/*   Updated: 2022/01/05 11:34:18 by amann            ###   ########.fr       */
+/*   Updated: 2022/01/06 19:12:54 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_atoi(const char *str)
 		if (ft_isdigit(str[i]))
 			res = (res * 10) + (str[i] - 48);
 		if (ft_isdigit(str[i]) && !ft_isdigit(str[i + 1]))
-			return (res * sign);
+			break;
 		i++;
 	}
 	return (res * sign);
