@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:37:40 by amann             #+#    #+#             */
-/*   Updated: 2021/12/04 15:55:53 by amann            ###   ########.fr       */
+/*   Updated: 2022/01/10 11:48:58 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	res = (char *) malloc((len + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
-	if (start >= ft_strlen(s) || len > ft_strlen(s))
+	if (start > ft_strlen(s) || len > ft_strlen(s))
 		return (res);
 	i = 0;
 	while (i < len)

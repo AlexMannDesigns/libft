@@ -6,7 +6,7 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 13:44:30 by amann             #+#    #+#              #
-#    Updated: 2021/12/18 12:42:00 by amann            ###   ########.fr        #
+#    Updated: 2022/01/10 11:48:45 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,15 +32,15 @@ OBJ = $(LIB:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) $(LIB)
-	ar rcs $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@@gcc $(FLAGS) $(LIB)
+	@@ar rcs $(NAME) $(OBJ)
+	@@ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(OBJ)
+	@@/bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@@/bin/rm -f $(NAME)
 
 re: fclean all
 
