@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 11:38:14 by amann             #+#    #+#             */
-/*   Updated: 2021/12/04 16:32:25 by amann            ###   ########.fr       */
+/*   Updated: 2022/03/03 13:19:07 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@ char	*ft_strdup(const char *s1)
 {
 	int		len;
 	int		i;
-	char	*res;
+	char	*s2;
 
+	if (!s1)
+		return (NULL);
 	len = ft_strlen(s1);
 	i = 0;
-	res = (char *) malloc((len + 1) * sizeof(char));
-	if (!res)
+	s2 = (char *) malloc((len + 1) * sizeof(char));
+	if (!s2)
 		return (NULL);
 	while (i <= len)
 	{
-		res[i] = s1[i];
+		s2[i] = s1[i];
 		i++;
 	}
-	return (res);
+	return (s2);
 }
