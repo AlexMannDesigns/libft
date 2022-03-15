@@ -6,13 +6,13 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 13:44:30 by amann             #+#    #+#              #
-#    Updated: 2022/03/15 13:05:34 by amann            ###   ########.fr        #
+#    Updated: 2022/03/15 15:37:27 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #variables
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -ansi -pedantic -std=c99 -O3
 LIB =  ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c	\
 		ft_islower.c ft_lstiter.c ft_memcpy.c ft_memcmp.c ft_itoa.c ft_lstadd.c	\
 		ft_lstdel.c ft_lstdelone.c ft_isprint.c	ft_lstmap.c ft_lstnew.c			\
