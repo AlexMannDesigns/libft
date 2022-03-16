@@ -6,7 +6,7 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 11:48:22 by amann             #+#    #+#              #
-#    Updated: 2022/03/15 13:39:51 by amann            ###   ########.fr        #
+#    Updated: 2022/03/16 19:24:54 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,14 @@ $(NAME):
 	@ar rcs $(NAME) $(LIB_OBJ) $(GNL_OBJ) $(PRF_OBJ)
 
 clean:
-	@make -C $(LIB_DIR) clean
-	@make -C $(GNL_DIR) clean
-	@make -C $(PRF_DIR) clean
+	@$(MAKE) -C $(LIB_DIR) clean
+	@$(MAKE) -C $(GNL_DIR) clean
+	@$(MAKE) -C $(PRF_DIR) clean
 
 fclean: clean
-	@make -C $(LIB_DIR) fclean
-	@make -C $(GNL_DIR) fclean
-	@make -C $(PRF_DIR) fclean
+	@$(MAKE) -C $(LIB_DIR) fclean
+	@$(MAKE) -C $(GNL_DIR) fclean
+	@$(MAKE) -C $(PRF_DIR) fclean
 	@/bin/rm -f $(NAME)
 
 re: fclean all
