@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:43:03 by amann             #+#    #+#             */
-/*   Updated: 2021/12/02 13:55:04 by amann            ###   ########.fr       */
+/*   Updated: 2022/03/18 17:24:53 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ void	ft_freearray(void ***arr, size_t size)
 	i = 0;
 	while (i <= size)
 	{
-		free(*((*arr) + i));
-		*((*arr) + i) = NULL;
+		if (*((*arr + i))
+		{	
+			free(*((*arr) + i));
+			*((*arr) + i) = NULL;
+		}
 		i++;
 	}
 	free(*arr);
