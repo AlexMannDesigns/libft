@@ -6,7 +6,7 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 11:48:22 by amann             #+#    #+#              #
-#    Updated: 2022/04/06 16:30:02 by amann            ###   ########.fr        #
+#    Updated: 2022/04/07 16:24:00 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ LIB = $(LIB_DIR)ft_atoi.c $(LIB_DIR)ft_bzero.c $(LIB_DIR)ft_isalnum.c			\
 		$(LIB_DIR)ft_iswhitespace.c $(LIB_DIR)ft_abs.c $(LIB_DIR)ft_strnstr.c	\
 		$(LIB_DIR)ft_strrchr.c $(LIB_DIR)ft_toupper.c $(LIB_DIR)ft_abs_long.c	\
 		$(LIB_DIR)ft_lstadd_back.c $(LIB_DIR)ft_strndup.c $(LIB_DIR)ft_isupper.c\
-		$(LIB_DIR)ft_itoa_base.c $(LIB_DIR)ft_itoa_base_unsigned.c 
+		$(LIB_DIR)ft_itoa_base.c $(LIB_DIR)ft_itoa_base_unsigned.c 				\
+		$(LIB_DIR)ft_lstswap.c
 GNL = $(GNL_DIR)get_next_line.c
 PRF = $(PRF_DIR)conversion_control.c $(PRF_DIR)ft_printf.c $(PRF_DIR)set_flags.c\
 		$(PRF_DIR)print_result.c $(PRF_DIR)hash_flag.c $(PRF_DIR)flag_control.c	\
@@ -61,9 +62,11 @@ $(NAME):
 	@ar rcs $(NAME) $(LIB_OBJ) $(GNL_OBJ) $(PRF_OBJ)
 
 clean:
-	@$(MAKE) -C $(LIB_DIR) clean
-	@$(MAKE) -C $(GNL_DIR) clean
-	@$(MAKE) -C $(PRF_DIR) clean
+	@/bin/rm -f $(LIB_OBJ) $(GNL_OBJ) $(PRF_OBJ)
+
+#	@$(MAKE) -C $(LIB_DIR) clean
+#	@$(MAKE) -C $(GNL_DIR) clean
+#	@$(MAKE) -C $(PRF_DIR) clean
 
 fclean: clean
 	@$(MAKE) -C $(LIB_DIR) fclean

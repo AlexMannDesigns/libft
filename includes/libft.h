@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:41:30 by amann             #+#    #+#             */
-/*   Updated: 2022/03/15 12:21:05 by amann            ###   ########.fr       */
+/*   Updated: 2022/04/07 16:22:52 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void		ft_lstadd_back(t_list **alst, t_list *new);
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void		ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void		ft_lstswap(t_list **list, t_list **head);
 
 void		ft_freearray(void ***arr, size_t size);
 int			ft_islower(int c);
